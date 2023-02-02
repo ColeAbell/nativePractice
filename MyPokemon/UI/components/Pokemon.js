@@ -3,12 +3,12 @@ import React, {useEffect, useState} from 'react';
 import {getOnePokemon} from '../../services/pokemonRequests';
 
 export default function Pokemon({details}) {
-  const [pokeSprite, setPokeSprite] = useState(null);
+  const [sprite, setSprite] = useState({sprite: null, allDetails: {}});
 
   async function getSprite() {
     try {
       const info = await getOnePokemon(details.url);
-      setPokeSprite(info.sprites['front_default']);
+      setSprite({sprite: info.sprites['front_default'], allDetails: info});
     } catch (e) {
       console.error(e);
     }
@@ -21,8 +21,10 @@ export default function Pokemon({details}) {
   return (
     <View style={styles.container}>
       <Pressable>
-        <Text style={styles.name}>{details.name}</Text>
-        <Image source={{uri: pokeSprite}} style={styles.sprite} />
+        <View style={styles.innerContainer}>
+          <Text style={styles.name}>{details.name}</Text>
+          <Image source={{uri: sprite.sprite}} style={styles.sprite} />
+        </View>
       </Pressable>
     </View>
   );
@@ -38,8 +40,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 6,
   },
+  innerContainer: {
+    alignItems: 'center',
+  },
   name: {
-    marginTop: 8,
+    marginTop: 10,
     fontStyle: 'italic',
     fontSize: 25,
   },

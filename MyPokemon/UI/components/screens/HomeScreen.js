@@ -1,12 +1,11 @@
 import {React, useEffect, useState} from 'react';
 import {getAllPokemon} from '../../../services/pokemonRequests';
 import {
-  View,
-  Text,
   FlatList,
   ActivityIndicator,
   StyleSheet,
   Platform,
+  SafeAreaView,
 } from 'react-native';
 import Pokemon from '../Pokemon';
 
@@ -27,7 +26,7 @@ export default function HomeScreen() {
   }, []);
 
   return (
-    <View>
+    <SafeAreaView>
       {pokemon ? (
         <FlatList
           data={pokemon}
@@ -40,7 +39,7 @@ export default function HomeScreen() {
       ) : (
         <ActivityIndicator size="large" />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
