@@ -2,7 +2,7 @@ import {Image, Pressable, StyleSheet, Text, View, Platform} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {getOnePokemon} from '../../services/pokemonRequests';
 
-export default function Pokemon({details}) {
+export default function Pokemon({details, press}) {
   const [sprite, setSprite] = useState({sprite: null, allDetails: {}});
 
   async function getSprite() {
@@ -14,13 +14,17 @@ export default function Pokemon({details}) {
     }
   }
 
+  function handlePress() {
+    press(sprite.allDetails);
+  }
+
   useEffect(() => {
     getSprite();
   }, []);
 
   return (
     <View style={styles.container}>
-      <Pressable>
+      <Pressable onPress={handlePress}>
         <View style={styles.innerContainer}>
           <Text style={styles.name}>{details.name}</Text>
           <Image source={{uri: sprite.sprite}} style={styles.sprite} />
