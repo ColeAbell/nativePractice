@@ -2,12 +2,13 @@ import {useState} from 'react';
 import {StyleSheet, TextInput, View} from 'react-native';
 import {Text} from 'react-native-elements';
 
-export default function FindPokemon({which}) {
+export default function FindPokemon({which, isError}) {
   const [search, onChangeSearch] = useState({old: '', recent: ''});
 
   function onChange(text) {
+    const result = text.replace(/[^a-z]/gi, '');
     onChangeSearch(last => {
-      return {old: last.recent, recent: text};
+      return {old: last.recent, recent: result.toLowerCase()};
     });
   }
 
@@ -24,6 +25,9 @@ export default function FindPokemon({which}) {
         value={search.recent}
         style={styles.input}
       />
+      {isError && (
+        <Text style={styles.errorMessage}>NO MATCHING POKEMON FOUND</Text>
+      )}
     </View>
   );
 }
@@ -42,5 +46,10 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 20,
     fontSize: 25,
+  },
+  errorMessage: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'red',
   },
 });

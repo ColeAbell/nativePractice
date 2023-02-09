@@ -1,3 +1,4 @@
+import {useIsFocused} from '@react-navigation/native';
 import {useEffect, useState, React} from 'react';
 import {ActivityIndicator, FlatList, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -9,8 +10,10 @@ import Pokemon from '../Pokemon';
 export default function FavoritesScreen({navigation}) {
   const [favPokemon, setFavPokemon] = useState([]);
   const [whichPokes, setWhichPokes] = useState({txt: '', pokes: []});
-  const favorites = useSelector(state => state.favorites);
+  const favorites = useSelector(state => state.favoritesInfo.favorites);
   const dispatch = useDispatch();
+  const isFocused = useIsFocused();
+  const error = whichPokes.txt !== '' && whichPokes.pokes.length === 0;
 
   async function setUp() {
     try {
@@ -44,11 +47,11 @@ export default function FavoritesScreen({navigation}) {
   useEffect(() => {
     console.log(favorites);
     setUp();
-  }, []);
+  }, [isFocused]);
 
   return (
     <SafeAreaView style={styles.list}>
-      <FindPokemon which={which} />
+      <FindPokemon which={which} isError={error} />
       <View style={styles.container}>
         {favPokemon ? (
           <FlatList

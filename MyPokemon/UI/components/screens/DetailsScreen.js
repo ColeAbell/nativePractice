@@ -19,7 +19,7 @@ export default function DetailsScreen({route, navigation}) {
     types: [],
     isFavorite: false,
   });
-  const favorites = useSelector(state => state.favorites);
+  const favorites = useSelector(state => state.favoritesInfo.favorites);
   const dispatch = useDispatch();
 
   function addFav(name) {

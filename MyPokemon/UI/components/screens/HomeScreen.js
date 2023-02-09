@@ -11,10 +11,12 @@ import {
 import Pokemon from '../Pokemon';
 import GoToFavorites from '../GoToFavorites';
 import FindPokemon from '../FindPokemon';
+import {Text} from 'react-native-elements';
 
 export default function HomeScreen({navigation}) {
   const [pokemon, setPokemon] = useState([]);
   const [whichPokes, setWhichPokes] = useState({txt: '', pokes: []});
+  const error = whichPokes.txt !== '' && whichPokes.pokes.length === 0;
 
   async function getMons() {
     try {
@@ -58,7 +60,7 @@ export default function HomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.list}>
       <View style={styles.container}>
-        <FindPokemon which={which} />
+        <FindPokemon which={which} isError={error} />
         {pokemon ? (
           <FlatList
             data={whichPokes.txt !== '' ? whichPokes.pokes : pokemon}
