@@ -6,6 +6,7 @@ import {
   View,
   Text,
   FlatList,
+  ActivityIndicator,
 } from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {favoriteActions} from '../../../store/favoritesSlice';
@@ -30,7 +31,6 @@ export default function DetailsScreen({route, navigation}) {
   function removeFav(name) {
     dispatch(favoriteActions.removeFavorite(name));
   }
-
 
   useEffect(() => {
     const details = route.params.deets;
@@ -62,10 +62,17 @@ export default function DetailsScreen({route, navigation}) {
     console.log(fav);
 
     navigation.setOptions({
-        headerRight: () => {
-          return <FavoriteButton fav={fav} name={details.name} addFav={addFav} removeFav={removeFav} />;
-        },
-      });
+      headerRight: () => {
+        return (
+          <FavoriteButton
+            fav={fav}
+            name={details.name}
+            addFav={addFav}
+            removeFav={removeFav}
+          />
+        );
+      },
+    });
 
     setPokeDeets({
       sprites: images,
@@ -74,6 +81,10 @@ export default function DetailsScreen({route, navigation}) {
       isFavorite: fav,
     });
   }, []);
+
+  if (pokeDeets.sprites.length === 0) {
+    return <ActivityIndicator size={'large'} />;
+  }
 
   return (
     <SafeAreaView style={styles.container}>

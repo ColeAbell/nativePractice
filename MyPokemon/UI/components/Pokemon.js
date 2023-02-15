@@ -1,9 +1,17 @@
-import {Image, Pressable, StyleSheet, Text, View, Platform} from 'react-native';
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  ActivityIndicator,
+} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {getOnePokemon} from '../../services/pokemonRequests';
 
 export default function Pokemon({details, press}) {
-  const [sprite, setSprite] = useState({sprite: null, allDetails: {}});
+  const [sprite, setSprite] = useState({sprite: '', allDetails: {}});
 
   async function getSprite() {
     try {
@@ -19,8 +27,15 @@ export default function Pokemon({details, press}) {
   }
 
   useEffect(() => {
-    getSprite();
+    async function setting() {
+      await getSprite();
+    }
+    setting();
   }, []);
+
+  if (sprite.sprite === '') {
+    return <ActivityIndicator size={'large'} />;
+  }
 
   return (
     <View style={styles.container}>

@@ -2,7 +2,7 @@ const apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 export async function getAllPokemon(url = apiUrl) {
   const headers = {
-    'method': 'GET',
+    method: 'GET',
     'Content-type': 'application/json',
   };
   const results = await fetch(url, headers);

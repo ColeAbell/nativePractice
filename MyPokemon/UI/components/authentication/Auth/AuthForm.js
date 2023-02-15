@@ -1,5 +1,5 @@
 import {React, useState} from 'react';
-import {Pressable, View} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import Input from './Input';
 
@@ -46,7 +46,7 @@ export default function AuthForm({isLogin, submitHandler, credentialsInvalid}) {
           value={password}
           onUpdateValue={setPassword}
           isInvalid={passwordInvalid}
-          secure
+          secure={true}
         />
         {!isLogin && (
           <Input
@@ -54,15 +54,45 @@ export default function AuthForm({isLogin, submitHandler, credentialsInvalid}) {
             value={confirmPassword}
             onUpdateValue={setConfirmPassword}
             isInvalid={passwordsDontMatch}
-            secure
+            secure={true}
           />
         )}
-        <View>
-          <Pressable onPress={submitForm}>
-            <Text>{isLogin ? 'Login' : 'Create Account'}</Text>
+        <View style={styles.buttonOuterContainer}>
+          <Pressable
+            onPress={submitForm}
+            android_ripple={{color: '#AA336A'}}
+            style={styles.buttonInnerContainer}>
+            <Text style={styles.label}>
+              {isLogin ? 'Login' : 'Create Account'}
+            </Text>
           </Pressable>
         </View>
       </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#FFFDD0',
+    borderColor: '#FFB6C1',
+    borderWidth: 5,
+    opacity: 0.9,
+    padding: 50,
+  },
+  buttonOuterContainer: {
+    marginTop: 30,
+    borderRadius: 30,
+    overflow: 'hidden',
+  },
+  buttonInnerContainer: {
+    padding: 15,
+    backgroundColor: '#FFC0CB',
+    elevation: 2,
+  },
+  label: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    textAlign: 'center',
+  },
+});
