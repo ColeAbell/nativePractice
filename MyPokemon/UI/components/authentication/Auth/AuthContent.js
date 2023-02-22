@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import {Text} from 'react-native-elements';
 import AuthForm from './AuthForm';
+import {Testing} from './Testing';
 
 export default function AuthContent({isLogin, onAuthenticate}) {
   const [credentialsInvalid, setCredentialsInvalid] = useState({

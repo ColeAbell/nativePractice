@@ -1,0 +1,53 @@
+47b16f211549e4cebdebaa447a6716f5
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = FavoriteButton;
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _react = require("react");
+var _reactNative = require("react-native");
+var _reactNativeElements = require("react-native-elements");
+var _jsxRuntime = require("react/jsx-runtime");
+function FavoriteButton(_ref) {
+  var fav = _ref.fav,
+    addFav = _ref.addFav,
+    name = _ref.name,
+    removeFav = _ref.removeFav;
+  var _useState = (0, _react.useState)(fav),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    isFav = _useState2[0],
+    setIsFav = _useState2[1];
+  function adding() {
+    addFav(name);
+    console.log('adding fav');
+    setIsFav(function (prev) {
+      return !prev;
+    });
+  }
+  function remove() {
+    removeFav(name);
+    console.log('removing fav');
+    setIsFav(function (prev) {
+      return !prev;
+    });
+  }
+  var no = '../assets/emptyPokeball.png';
+  var yes = '../assets/fullPokeball.png';
+  return (0, _jsxRuntime.jsx)(_reactNative.Pressable, {
+    onPress: isFav ? remove : adding,
+    children: (0, _jsxRuntime.jsx)(_reactNativeElements.Image, {
+      source: isFav ? require(yes) : require(no),
+      style: styles.icon
+    })
+  });
+}
+var styles = _reactNative.StyleSheet.create({
+  icon: {
+    width: 30,
+    height: 30
+  }
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJGYXZvcml0ZUJ1dHRvbiIsImZhdiIsImFkZEZhdiIsIm5hbWUiLCJyZW1vdmVGYXYiLCJ1c2VTdGF0ZSIsImlzRmF2Iiwic2V0SXNGYXYiLCJhZGRpbmciLCJjb25zb2xlIiwibG9nIiwicHJldiIsInJlbW92ZSIsIm5vIiwieWVzIiwicmVxdWlyZSIsInN0eWxlcyIsImljb24iLCJTdHlsZVNoZWV0IiwiY3JlYXRlIiwid2lkdGgiLCJoZWlnaHQiXSwic291cmNlcyI6WyJGYXZvcml0ZUJ1dHRvbi5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1JlYWN0LCB1c2VTdGF0ZX0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHtQcmVzc2FibGUsIFN0eWxlU2hlZXR9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQge0ljb24sIEltYWdlfSBmcm9tICdyZWFjdC1uYXRpdmUtZWxlbWVudHMnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBGYXZvcml0ZUJ1dHRvbih7ZmF2LCBhZGRGYXYsIG5hbWUsIHJlbW92ZUZhdn0pIHtcbiAgY29uc3QgW2lzRmF2LCBzZXRJc0Zhdl0gPSB1c2VTdGF0ZShmYXYpO1xuXG4gIGZ1bmN0aW9uIGFkZGluZygpIHtcbiAgICBhZGRGYXYobmFtZSk7XG4gICAgY29uc29sZS5sb2coJ2FkZGluZyBmYXYnKTtcbiAgICBzZXRJc0ZhdihwcmV2ID0+ICFwcmV2KTtcbiAgfVxuXG4gIGZ1bmN0aW9uIHJlbW92ZSgpIHtcbiAgICByZW1vdmVGYXYobmFtZSk7XG4gICAgY29uc29sZS5sb2coJ3JlbW92aW5nIGZhdicpO1xuICAgIHNldElzRmF2KHByZXYgPT4gIXByZXYpO1xuICB9XG5cbiAgY29uc3Qgbm8gPSAnLi4vYXNzZXRzL2VtcHR5UG9rZWJhbGwucG5nJztcbiAgY29uc3QgeWVzID0gJy4uL2Fzc2V0cy9mdWxsUG9rZWJhbGwucG5nJztcbiAgcmV0dXJuIChcbiAgICA8UHJlc3NhYmxlIG9uUHJlc3M9e2lzRmF2ID8gcmVtb3ZlIDogYWRkaW5nfT5cbiAgICAgIDxJbWFnZSBzb3VyY2U9e2lzRmF2ID8gcmVxdWlyZSh5ZXMpIDogcmVxdWlyZShubyl9IHN0eWxlPXtzdHlsZXMuaWNvbn0gLz5cbiAgICA8L1ByZXNzYWJsZT5cbiAgKTtcbn1cblxuY29uc3Qgc3R5bGVzID0gU3R5bGVTaGVldC5jcmVhdGUoe1xuICBpY29uOiB7XG4gICAgd2lkdGg6IDMwLFxuICAgIGhlaWdodDogMzAsXG4gIH0sXG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTtBQUNBO0FBQ0E7QUFBa0Q7QUFFbkMsU0FBU0EsY0FBYyxPQUFpQztFQUFBLElBQS9CQyxHQUFHLFFBQUhBLEdBQUc7SUFBRUMsTUFBTSxRQUFOQSxNQUFNO0lBQUVDLElBQUksUUFBSkEsSUFBSTtJQUFFQyxTQUFTLFFBQVRBLFNBQVM7RUFDbEUsZ0JBQTBCLElBQUFDLGVBQVEsRUFBQ0osR0FBRyxDQUFDO0lBQUE7SUFBaENLLEtBQUs7SUFBRUMsUUFBUTtFQUV0QixTQUFTQyxNQUFNLEdBQUc7SUFDaEJOLE1BQU0sQ0FBQ0MsSUFBSSxDQUFDO0lBQ1pNLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDLFlBQVksQ0FBQztJQUN6QkgsUUFBUSxDQUFDLFVBQUFJLElBQUk7TUFBQSxPQUFJLENBQUNBLElBQUk7SUFBQSxFQUFDO0VBQ3pCO0VBRUEsU0FBU0MsTUFBTSxHQUFHO0lBQ2hCUixTQUFTLENBQUNELElBQUksQ0FBQztJQUNmTSxPQUFPLENBQUNDLEdBQUcsQ0FBQyxjQUFjLENBQUM7SUFDM0JILFFBQVEsQ0FBQyxVQUFBSSxJQUFJO01BQUEsT0FBSSxDQUFDQSxJQUFJO0lBQUEsRUFBQztFQUN6QjtFQUVBLElBQU1FLEVBQUUsR0FBRyw2QkFBNkI7RUFDeEMsSUFBTUMsR0FBRyxHQUFHLDRCQUE0QjtFQUN4QyxPQUNFLHFCQUFDLHNCQUFTO0lBQUMsT0FBTyxFQUFFUixLQUFLLEdBQUdNLE1BQU0sR0FBR0osTUFBTztJQUFBLFVBQzFDLHFCQUFDLDBCQUFLO01BQUMsTUFBTSxFQUFFRixLQUFLLEdBQUdTLE9BQU8sQ0FBQ0QsR0FBRyxDQUFDLEdBQUdDLE9BQU8sQ0FBQ0YsRUFBRSxDQUFFO01BQUMsS0FBSyxFQUFFRyxNQUFNLENBQUNDO0lBQUs7RUFBRyxFQUMvRDtBQUVoQjtBQUVBLElBQU1ELE1BQU0sR0FBR0UsdUJBQVUsQ0FBQ0MsTUFBTSxDQUFDO0VBQy9CRixJQUFJLEVBQUU7SUFDSkcsS0FBSyxFQUFFLEVBQUU7SUFDVEMsTUFBTSxFQUFFO0VBQ1Y7QUFDRixDQUFDLENBQUMifQ==

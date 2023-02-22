@@ -1,0 +1,36 @@
+fa5848c30044c23567433e514f68835c
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _HomeScreen = _interopRequireDefault(require("../UI/components/screens/HomeScreen"));
+var _pokemonRequests = require("../services/pokemonRequests");
+var _jsxRuntime = require("react/jsx-runtime");
+var content = [{
+  name: 'bulbasaur',
+  url: 'https://pokeapi.co/api/v2/pokemon/1/'
+}, {
+  name: 'ivysaur',
+  url: 'https://pokeapi.co/api/v2/pokemon/2/'
+}, {
+  name: 'venusaur',
+  url: 'https://pokeapi.co/api/v2/pokemon/3/'
+}];
+test('Does home screen work', (0, _asyncToGenerator2.default)(function* () {
+  _pokemonRequests.getAllPokemon = (jest.fn(function () {
+    return content;
+  }), function () {
+    throw new Error('"' + "getAllPokemon" + '" is read-only.');
+  }());
+  (0, _reactNative.render)((0, _jsxRuntime.jsx)(_HomeScreen.default, {
+    navigation: {
+      setOptions: jest.fn()
+    }
+  }));
+  var pokes = yield _reactNative.screen.getAllByTestId('bob');
+  expect(pokes).toHaveLength(3);
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb250ZW50IiwibmFtZSIsInVybCIsInRlc3QiLCJqZXN0IiwiZm4iLCJyZW5kZXIiLCJzZXRPcHRpb25zIiwicG9rZXMiLCJzY3JlZW4iLCJnZXRBbGxCeVRlc3RJZCIsImV4cGVjdCIsInRvSGF2ZUxlbmd0aCJdLCJzb3VyY2VzIjpbIkhvbWVTY3JlZW4udGVzdC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge3JlbmRlciwgc2NyZWVuLCBmaXJlRXZlbnR9IGZyb20gJ0B0ZXN0aW5nLWxpYnJhcnkvcmVhY3QtbmF0aXZlJztcbmltcG9ydCAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgSG9tZVNjcmVlbiBmcm9tICcuLi9VSS9jb21wb25lbnRzL3NjcmVlbnMvSG9tZVNjcmVlbic7XG5pbXBvcnQge2dldEFsbFBva2Vtb259IGZyb20gJy4uL3NlcnZpY2VzL3Bva2Vtb25SZXF1ZXN0cyc7XG5cbmxldCBjb250ZW50ID0gW1xuICB7XG4gICAgbmFtZTogJ2J1bGJhc2F1cicsXG4gICAgdXJsOiAnaHR0cHM6Ly9wb2tlYXBpLmNvL2FwaS92Mi9wb2tlbW9uLzEvJyxcbiAgfSxcbiAge1xuICAgIG5hbWU6ICdpdnlzYXVyJyxcbiAgICB1cmw6ICdodHRwczovL3Bva2VhcGkuY28vYXBpL3YyL3Bva2Vtb24vMi8nLFxuICB9LFxuICB7XG4gICAgbmFtZTogJ3ZlbnVzYXVyJyxcbiAgICB1cmw6ICdodHRwczovL3Bva2VhcGkuY28vYXBpL3YyL3Bva2Vtb24vMy8nLFxuICB9LFxuXTtcblxudGVzdCgnRG9lcyBob21lIHNjcmVlbiB3b3JrJywgYXN5bmMgKCkgPT4ge1xuICBnZXRBbGxQb2tlbW9uID0gamVzdC5mbigoKSA9PiBjb250ZW50KTtcbiAgcmVuZGVyKDxIb21lU2NyZWVuIG5hdmlnYXRpb249e3tzZXRPcHRpb25zOiBqZXN0LmZuKCl9fSAvPik7XG4gIGNvbnN0IHBva2VzID0gYXdhaXQgc2NyZWVuLmdldEFsbEJ5VGVzdElkKCdib2InKTtcbiAgZXhwZWN0KHBva2VzKS50b0hhdmVMZW5ndGgoMyk7XG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBMEQ7QUFFMUQsSUFBSUEsT0FBTyxHQUFHLENBQ1o7RUFDRUMsSUFBSSxFQUFFLFdBQVc7RUFDakJDLEdBQUcsRUFBRTtBQUNQLENBQUMsRUFDRDtFQUNFRCxJQUFJLEVBQUUsU0FBUztFQUNmQyxHQUFHLEVBQUU7QUFDUCxDQUFDLEVBQ0Q7RUFDRUQsSUFBSSxFQUFFLFVBQVU7RUFDaEJDLEdBQUcsRUFBRTtBQUNQLENBQUMsQ0FDRjtBQUVEQyxJQUFJLENBQUMsdUJBQXVCLGtDQUFFLGFBQVk7RUFDeEMsa0NBQWdCQyxJQUFJLENBQUNDLEVBQUUsQ0FBQztJQUFBLE9BQU1MLE9BQU87RUFBQSxFQUFDO0lBQUE7RUFBQTtFQUN0QyxJQUFBTSxtQkFBTSxFQUFDLHFCQUFDLG1CQUFVO0lBQUMsVUFBVSxFQUFFO01BQUNDLFVBQVUsRUFBRUgsSUFBSSxDQUFDQyxFQUFFO0lBQUU7RUFBRSxFQUFHLENBQUM7RUFDM0QsSUFBTUcsS0FBSyxTQUFTQyxtQkFBTSxDQUFDQyxjQUFjLENBQUMsS0FBSyxDQUFDO0VBQ2hEQyxNQUFNLENBQUNILEtBQUssQ0FBQyxDQUFDSSxZQUFZLENBQUMsQ0FBQyxDQUFDO0FBQy9CLENBQUMsRUFBQyJ9

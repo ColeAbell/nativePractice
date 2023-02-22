@@ -20,10 +20,10 @@ export default function HomeScreen({navigation}) {
 
   async function getMons() {
     try {
-      console.log('im trying');
+      //console.log('im trying');
       const myMons = await getAllPokemon();
       setPokemon(myMons.results);
-      console.log('success');
+      //console.log('success');
     } catch (e) {
       console.log('flop');
       console.error(e);
@@ -31,7 +31,7 @@ export default function HomeScreen({navigation}) {
   }
 
   function which(text) {
-    console.log('yooo');
+    //console.log('yooo');
     if (text !== whichPokes.txt) {
       setWhichPokes({
         txt: text,
@@ -59,10 +59,12 @@ export default function HomeScreen({navigation}) {
 
   return (
     <SafeAreaView style={styles.list}>
+      <Text>Please work</Text>
       <View style={styles.container}>
         <FindPokemon which={which} isError={error} />
         {pokemon ? (
           <FlatList
+            testID="b"
             data={whichPokes.txt !== '' ? whichPokes.pokes : pokemon}
             keyExtractor={item => item.name}
             renderItem={itemData => (

@@ -1,0 +1,20 @@
+d7fda025f82198d02e1fe698ee8fefdb
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _HomeScreen = _interopRequireDefault(require("../UI/components/screens/HomeScreen"));
+var _jsxRuntime = require("react/jsx-runtime");
+test('Does home screen work', (0, _asyncToGenerator2.default)(function* () {
+  (0, _reactNative.render)((0, _jsxRuntime.jsx)(_HomeScreen.default, {
+    navigation: {
+      setOptions: jest.fn()
+    }
+  }));
+  var pokes = yield _reactNative.screen.getAllByTestId('b');
+  expect(pokes).toHaveLength(20);
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJ0ZXN0IiwicmVuZGVyIiwic2V0T3B0aW9ucyIsImplc3QiLCJmbiIsInBva2VzIiwic2NyZWVuIiwiZ2V0QWxsQnlUZXN0SWQiLCJleHBlY3QiLCJ0b0hhdmVMZW5ndGgiXSwic291cmNlcyI6WyJIb21lU2NyZWVuLnRlc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtyZW5kZXIsIHNjcmVlbiwgZmlyZUV2ZW50fSBmcm9tICdAdGVzdGluZy1saWJyYXJ5L3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IEhvbWVTY3JlZW4gZnJvbSAnLi4vVUkvY29tcG9uZW50cy9zY3JlZW5zL0hvbWVTY3JlZW4nO1xuXG50ZXN0KCdEb2VzIGhvbWUgc2NyZWVuIHdvcmsnLCBhc3luYyAoKSA9PiB7XG4gIHJlbmRlcig8SG9tZVNjcmVlbiBuYXZpZ2F0aW9uPXt7c2V0T3B0aW9uczogamVzdC5mbigpfX0gLz4pO1xuICBjb25zdCBwb2tlcyA9IGF3YWl0IHNjcmVlbi5nZXRBbGxCeVRlc3RJZCgnYicpO1xuICBleHBlY3QocG9rZXMpLnRvSGF2ZUxlbmd0aCgyMCk7XG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQTZEO0FBRTdEQSxJQUFJLENBQUMsdUJBQXVCLGtDQUFFLGFBQVk7RUFDeEMsSUFBQUMsbUJBQU0sRUFBQyxxQkFBQyxtQkFBVTtJQUFDLFVBQVUsRUFBRTtNQUFDQyxVQUFVLEVBQUVDLElBQUksQ0FBQ0MsRUFBRTtJQUFFO0VBQUUsRUFBRyxDQUFDO0VBQzNELElBQU1DLEtBQUssU0FBU0MsbUJBQU0sQ0FBQ0MsY0FBYyxDQUFDLEdBQUcsQ0FBQztFQUM5Q0MsTUFBTSxDQUFDSCxLQUFLLENBQUMsQ0FBQ0ksWUFBWSxDQUFDLEVBQUUsQ0FBQztBQUNoQyxDQUFDLEVBQUMifQ==

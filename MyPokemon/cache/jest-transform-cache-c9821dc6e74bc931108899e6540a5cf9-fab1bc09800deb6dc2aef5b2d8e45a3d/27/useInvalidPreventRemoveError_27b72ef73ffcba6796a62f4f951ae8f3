@@ -1,0 +1,64 @@
+8a7f27fd9857a3a4a09a7ec6cc235eda
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useInvalidPreventRemoveError;
+var _native = require("@react-navigation/native");
+var React = _interopRequireWildcard(require("react"));
+function _getRequireWildcardCache(nodeInterop) {
+  if (typeof WeakMap !== "function") return null;
+  var cacheBabelInterop = new WeakMap();
+  var cacheNodeInterop = new WeakMap();
+  return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+    return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+  })(nodeInterop);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+  if (!nodeInterop && obj && obj.__esModule) {
+    return obj;
+  }
+  if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+    return {
+      default: obj
+    };
+  }
+  var cache = _getRequireWildcardCache(nodeInterop);
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+  for (var key in obj) {
+    if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+  newObj.default = obj;
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+  return newObj;
+}
+function useInvalidPreventRemoveError(descriptors) {
+  var _preventedDescriptor$, _preventedDescriptor$2;
+  var _ref = (0, _native.usePreventRemoveContext)(),
+    preventedRoutes = _ref.preventedRoutes;
+  var preventedRouteKey = Object.keys(preventedRoutes)[0];
+  var preventedDescriptor = descriptors[preventedRouteKey];
+  var isHeaderBackButtonMenuEnabledOnPreventedScreen = preventedDescriptor === null || preventedDescriptor === void 0 ? void 0 : (_preventedDescriptor$ = preventedDescriptor.options) === null || _preventedDescriptor$ === void 0 ? void 0 : _preventedDescriptor$.headerBackButtonMenuEnabled;
+  var preventedRouteName = preventedDescriptor === null || preventedDescriptor === void 0 ? void 0 : (_preventedDescriptor$2 = preventedDescriptor.route) === null || _preventedDescriptor$2 === void 0 ? void 0 : _preventedDescriptor$2.name;
+  React.useEffect(function () {
+    if (preventedRouteKey != null && isHeaderBackButtonMenuEnabledOnPreventedScreen) {
+      var message = "The screen " + preventedRouteName + " uses 'usePreventRemove' hook alongside 'headerBackButtonMenuEnabled: true', which is not supported. \n\n" + ("Consider removing 'headerBackButtonMenuEnabled: true' from " + preventedRouteName + " screen to get rid of this error.");
+      console.error(message);
+    }
+  }, [preventedRouteKey, isHeaderBackButtonMenuEnabledOnPreventedScreen, preventedRouteName]);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7QUFDQTtBQUErQjtFQUFBO0VBQUE7RUFBQTtFQUFBO0lBQUE7RUFBQTtBQUFBO0FBQUE7RUFBQTtJQUFBO0VBQUE7RUFBQTtJQUFBO01BQUFBO0lBQUE7RUFBQTtFQUFBO0VBQUE7SUFBQTtFQUFBO0VBQUE7RUFBQTtFQUFBO0lBQUE7TUFBQTtNQUFBO1FBQUFDO01BQUE7UUFBQUM7TUFBQTtJQUFBO0VBQUE7RUFBQUE7RUFBQTtJQUFBQztFQUFBO0VBQUE7QUFBQTtBQUloQixTQUFTQyw0QkFBNEIsQ0FDbERDLFdBQXFDLEVBQ3JDO0VBQUE7RUFDQSxXQUE0QixtQ0FBdUIsR0FBRTtJQUE3Q0M7RUFDUixJQUFNQyxpQkFBaUIsR0FBR04sTUFBTSxDQUFDTyxJQUFJLENBQUNGLGVBQWUsQ0FBQyxDQUFDLENBQUMsQ0FBQztFQUN6RCxJQUFNRyxtQkFBbUIsR0FBR0osV0FBVyxDQUFDRSxpQkFBaUIsQ0FBQztFQUMxRCxJQUFNRyw4Q0FBOEMsR0FDbERELG1CQUFtQixhQUFuQkEsbUJBQW1CLGdEQUFuQkEsbUJBQW1CLENBQUVFLE9BQU8sMERBQTVCQyxzQkFBOEJDLDJCQUEyQjtFQUMzRCxJQUFNQyxrQkFBa0IsR0FBR0wsbUJBQW1CLGFBQW5CQSxtQkFBbUIsaURBQW5CQSxtQkFBbUIsQ0FBRU0sS0FBSywyREFBMUJDLHVCQUE0QkMsSUFBSTtFQUUzREMsS0FBSyxDQUFDQyxTQUFTLENBQUMsWUFBTTtJQUNwQixJQUNFWixpQkFBaUIsSUFBSSxJQUFJLElBQ3pCRyw4Q0FBOEMsRUFDOUM7TUFDQSxJQUFNVSxPQUFPLEdBQ1YsZ0JBQWFOLGtCQUFtQixrTEFDNkJBLGtCQUFtQix1Q0FBa0M7TUFDckhPLE9BQU8sQ0FBQ0MsS0FBSyxDQUFDRixPQUFPLENBQUM7SUFDeEI7RUFDRixDQUFDLEVBQUUsQ0FDRGIsaUJBQWlCLEVBQ2pCRyw4Q0FBOEMsRUFDOUNJLGtCQUFrQixDQUNuQixDQUFDO0FBQ0oiLCJuYW1lcyI6WyJkZWZhdWx0IiwiT2JqZWN0IiwibmV3T2JqIiwiY2FjaGUiLCJ1c2VJbnZhbGlkUHJldmVudFJlbW92ZUVycm9yIiwiZGVzY3JpcHRvcnMiLCJwcmV2ZW50ZWRSb3V0ZXMiLCJwcmV2ZW50ZWRSb3V0ZUtleSIsImtleXMiLCJwcmV2ZW50ZWREZXNjcmlwdG9yIiwiaXNIZWFkZXJCYWNrQnV0dG9uTWVudUVuYWJsZWRPblByZXZlbnRlZFNjcmVlbiIsIm9wdGlvbnMiLCJfcHJldmVudGVkRGVzY3JpcHRvciQiLCJoZWFkZXJCYWNrQnV0dG9uTWVudUVuYWJsZWQiLCJwcmV2ZW50ZWRSb3V0ZU5hbWUiLCJyb3V0ZSIsIl9wcmV2ZW50ZWREZXNjcmlwdG9yJDIiLCJuYW1lIiwiUmVhY3QiLCJ1c2VFZmZlY3QiLCJtZXNzYWdlIiwiY29uc29sZSIsImVycm9yIl0sInNvdXJjZVJvb3QiOiIuLi8uLi9zcmMiLCJzb3VyY2VzIjpbInVzZUludmFsaWRQcmV2ZW50UmVtb3ZlRXJyb3IudHN4Il0sInNvdXJjZXNDb250ZW50IjpbbnVsbF19

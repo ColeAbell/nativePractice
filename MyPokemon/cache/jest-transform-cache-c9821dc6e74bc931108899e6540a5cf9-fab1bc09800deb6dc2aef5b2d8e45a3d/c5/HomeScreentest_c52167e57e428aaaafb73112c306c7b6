@@ -1,0 +1,15 @@
+bcf1a8c0358a078c9ead5e2751066367
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _HomeScreen = _interopRequireDefault(require("../UI/components/screens/HomeScreen"));
+var _jsxRuntime = require("react/jsx-runtime");
+test('Does home screen work', function () {
+  (0, _reactNative.render)((0, _jsxRuntime.jsx)(_HomeScreen.default, {}));
+  var pokes = _reactNative.screen.getAllByText();
+  expect(pokes).toHaveLength(20);
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJ0ZXN0IiwicmVuZGVyIiwicG9rZXMiLCJzY3JlZW4iLCJnZXRBbGxCeVRleHQiLCJleHBlY3QiLCJ0b0hhdmVMZW5ndGgiXSwic291cmNlcyI6WyJIb21lU2NyZWVuLnRlc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtyZW5kZXIsIHNjcmVlbiwgZmlyZUV2ZW50fSBmcm9tICdAdGVzdGluZy1saWJyYXJ5L3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IEhvbWVTY3JlZW4gZnJvbSAnLi4vVUkvY29tcG9uZW50cy9zY3JlZW5zL0hvbWVTY3JlZW4nO1xuXG50ZXN0KCdEb2VzIGhvbWUgc2NyZWVuIHdvcmsnLCAoKSA9PiB7XG4gIHJlbmRlcig8SG9tZVNjcmVlbiAvPik7XG4gIGNvbnN0IHBva2VzID0gc2NyZWVuLmdldEFsbEJ5VGV4dCgpO1xuICBleHBlY3QocG9rZXMpLnRvSGF2ZUxlbmd0aCgyMCk7XG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFBNkQ7QUFFN0RBLElBQUksQ0FBQyx1QkFBdUIsRUFBRSxZQUFNO0VBQ2xDLElBQUFDLG1CQUFNLEVBQUMscUJBQUMsbUJBQVUsS0FBRyxDQUFDO0VBQ3RCLElBQU1DLEtBQUssR0FBR0MsbUJBQU0sQ0FBQ0MsWUFBWSxFQUFFO0VBQ25DQyxNQUFNLENBQUNILEtBQUssQ0FBQyxDQUFDSSxZQUFZLENBQUMsRUFBRSxDQUFDO0FBQ2hDLENBQUMsQ0FBQyJ9
