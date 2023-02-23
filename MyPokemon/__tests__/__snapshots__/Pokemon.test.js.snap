@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Does Pokemon render correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#7fffd4",
+      "borderRadius": 20,
+      "borderWidth": 6,
+      "height": 200,
+      "margin": 8,
+      "width": 180,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    testID="pressable"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 25,
+            "fontStyle": "italic",
+            "marginTop": 10,
+          }
+        }
+      >
+        ditto
+      </Text>
+      <Image
+        source={
+          {
+            "uri": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+          }
+        }
+        style={
+          {
+            "height": 150,
+            "width": 150,
+          }
+        }
+        testID="sprite"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Does home screen work 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#7fffd4",
+      "borderRadius": 20,
+      "borderWidth": 6,
+      "height": 200,
+      "margin": 8,
+      "width": 180,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    testID="pressable"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "fontSize": 25,
+            "fontStyle": "italic",
+            "marginTop": 10,
+          }
+        }
+      >
+        ditto
+      </Text>
+      <Image
+        source={
+          {
+            "uri": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+          }
+        }
+        style={
+          {
+            "height": 150,
+            "width": 150,
+          }
+        }
+        testID="sprite"
+      />
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,24 @@
+389762251879a8ab2b175bec44ed0ed9
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _FindPokemon = _interopRequireDefault(require("../UI/components/FindPokemon"));
+var _jsxRuntime = require("react/jsx-runtime");
+describe('Test search pokemon component', function () {
+  test('Component renders correctly with error prop false', (0, _asyncToGenerator2.default)(function* () {
+    var error = false;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    yield (0, _reactNative.waitFor)(function () {
+      return expect(_reactNative.screen.getByText('Search For A Pokemon')).toBeInstanceOf();
+    });
+  }));
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJkZXNjcmliZSIsInRlc3QiLCJlcnJvciIsIndoaWNoTW9jayIsImplc3QiLCJmbiIsInRyZWUiLCJyZW5kZXIiLCJ3YWl0Rm9yIiwiZXhwZWN0Iiwic2NyZWVuIiwiZ2V0QnlUZXh0IiwidG9CZUluc3RhbmNlT2YiXSwic291cmNlcyI6WyJGaW5kUG9rZW1vbi50ZXN0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gIHJlbmRlcixcbiAgc2NyZWVuLFxuICBmaXJlRXZlbnQsXG4gIGFjdCxcbiAgd2FpdEZvcixcbn0gZnJvbSAnQHRlc3RpbmctbGlicmFyeS9yZWFjdC1uYXRpdmUnO1xuaW1wb3J0ICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBGaW5kUG9rZW1vbiBmcm9tICcuLi9VSS9jb21wb25lbnRzL0ZpbmRQb2tlbW9uJztcblxuZGVzY3JpYmUoJ1Rlc3Qgc2VhcmNoIHBva2Vtb24gY29tcG9uZW50JywgKCkgPT4ge1xuICB0ZXN0KCdDb21wb25lbnQgcmVuZGVycyBjb3JyZWN0bHkgd2l0aCBlcnJvciBwcm9wIGZhbHNlJywgYXN5bmMgKCkgPT4ge1xuICAgIGNvbnN0IGVycm9yID0gZmFsc2U7XG4gICAgY29uc3Qgd2hpY2hNb2NrID0gamVzdC5mbigpO1xuICAgIGNvbnN0IHRyZWUgPSByZW5kZXIoPEZpbmRQb2tlbW9uIHdoaWNoPXt3aGljaE1vY2t9IGlzRXJyb3I9e2Vycm9yfSAvPik7XG4gICAgYXdhaXQgd2FpdEZvcigoKSA9PlxuICAgICAgZXhwZWN0KHNjcmVlbi5nZXRCeVRleHQoJ1NlYXJjaCBGb3IgQSBQb2tlbW9uJykpLnRvQmVJbnN0YW5jZU9mKCksXG4gICAgKTtcbiAgfSk7XG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7OztBQUFBO0FBT0E7QUFDQTtBQUNBO0FBQXVEO0FBRXZEQSxRQUFRLENBQUMsK0JBQStCLEVBQUUsWUFBTTtFQUM5Q0MsSUFBSSxDQUFDLG1EQUFtRCxrQ0FBRSxhQUFZO0lBQ3BFLElBQU1DLEtBQUssR0FBRyxLQUFLO0lBQ25CLElBQU1DLFNBQVMsR0FBR0MsSUFBSSxDQUFDQyxFQUFFLEVBQUU7SUFDM0IsSUFBTUMsSUFBSSxHQUFHLElBQUFDLG1CQUFNLEVBQUMscUJBQUMsb0JBQVc7TUFBQyxLQUFLLEVBQUVKLFNBQVU7TUFBQyxPQUFPLEVBQUVEO0lBQU0sRUFBRyxDQUFDO0lBQ3RFLE1BQU0sSUFBQU0sb0JBQU8sRUFBQztNQUFBLE9BQ1pDLE1BQU0sQ0FBQ0MsbUJBQU0sQ0FBQ0MsU0FBUyxDQUFDLHNCQUFzQixDQUFDLENBQUMsQ0FBQ0MsY0FBYyxFQUFFO0lBQUEsRUFDbEU7RUFDSCxDQUFDLEVBQUM7QUFDSixDQUFDLENBQUMifQ==

@@ -1,0 +1,21 @@
+f52a1f77a9302583763c18cf6bc12ffd
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _FindPokemon = _interopRequireDefault(require("../UI/components/FindPokemon"));
+var _jsxRuntime = require("react/jsx-runtime");
+describe('Test search pokemon component', function () {
+  test('Component renders correctly with error prop false', function () {
+    var error = false;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    expect(_reactNative.screen.getByText('Search For A Pokemon')).toBeInstanceOf();
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJkZXNjcmliZSIsInRlc3QiLCJlcnJvciIsIndoaWNoTW9jayIsImplc3QiLCJmbiIsInRyZWUiLCJyZW5kZXIiLCJleHBlY3QiLCJzY3JlZW4iLCJnZXRCeVRleHQiLCJ0b0JlSW5zdGFuY2VPZiJdLCJzb3VyY2VzIjpbIkZpbmRQb2tlbW9uLnRlc3QuanMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcbiAgcmVuZGVyLFxuICBzY3JlZW4sXG4gIGZpcmVFdmVudCxcbiAgYWN0LFxuICB3YWl0Rm9yLFxufSBmcm9tICdAdGVzdGluZy1saWJyYXJ5L3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IEZpbmRQb2tlbW9uIGZyb20gJy4uL1VJL2NvbXBvbmVudHMvRmluZFBva2Vtb24nO1xuXG5kZXNjcmliZSgnVGVzdCBzZWFyY2ggcG9rZW1vbiBjb21wb25lbnQnLCAoKSA9PiB7XG4gIHRlc3QoJ0NvbXBvbmVudCByZW5kZXJzIGNvcnJlY3RseSB3aXRoIGVycm9yIHByb3AgZmFsc2UnLCAoKSA9PiB7XG4gICAgY29uc3QgZXJyb3IgPSBmYWxzZTtcbiAgICBjb25zdCB3aGljaE1vY2sgPSBqZXN0LmZuKCk7XG4gICAgY29uc3QgdHJlZSA9IHJlbmRlcig8RmluZFBva2Vtb24gd2hpY2g9e3doaWNoTW9ja30gaXNFcnJvcj17ZXJyb3J9IC8+KTtcbiAgICBleHBlY3Qoc2NyZWVuLmdldEJ5VGV4dCgnU2VhcmNoIEZvciBBIFBva2Vtb24nKSkudG9CZUluc3RhbmNlT2YoKTtcbiAgfSk7XG59KTtcbiJdLCJtYXBwaW5ncyI6Ijs7O0FBQUE7QUFPQTtBQUNBO0FBQ0E7QUFBdUQ7QUFFdkRBLFFBQVEsQ0FBQywrQkFBK0IsRUFBRSxZQUFNO0VBQzlDQyxJQUFJLENBQUMsbURBQW1ELEVBQUUsWUFBTTtJQUM5RCxJQUFNQyxLQUFLLEdBQUcsS0FBSztJQUNuQixJQUFNQyxTQUFTLEdBQUdDLElBQUksQ0FBQ0MsRUFBRSxFQUFFO0lBQzNCLElBQU1DLElBQUksR0FBRyxJQUFBQyxtQkFBTSxFQUFDLHFCQUFDLG9CQUFXO01BQUMsS0FBSyxFQUFFSixTQUFVO01BQUMsT0FBTyxFQUFFRDtJQUFNLEVBQUcsQ0FBQztJQUN0RU0sTUFBTSxDQUFDQyxtQkFBTSxDQUFDQyxTQUFTLENBQUMsc0JBQXNCLENBQUMsQ0FBQyxDQUFDQyxjQUFjLEVBQUU7RUFDbkUsQ0FBQyxDQUFDO0FBQ0osQ0FBQyxDQUFDIn0=

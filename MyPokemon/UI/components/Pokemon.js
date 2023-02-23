@@ -34,15 +34,19 @@ export default function Pokemon({details, press}) {
   }, []);
 
   if (sprite.sprite === '') {
-    return <ActivityIndicator size={'large'} />;
+    return <ActivityIndicator testID="activity" size={'large'} />;
   }
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={handlePress}>
+      <Pressable onPress={handlePress} testID="pressable">
         <View style={styles.innerContainer}>
           <Text style={styles.name}>{details.name}</Text>
-          <Image source={{uri: sprite.sprite}} style={styles.sprite} />
+          <Image
+            source={{uri: sprite.sprite}}
+            style={styles.sprite}
+            testID="sprite"
+          />
         </View>
       </Pressable>
     </View>

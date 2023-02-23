@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, React} from 'react';
 import {Pressable, StyleSheet, TextInput, View} from 'react-native';
 import {Text} from 'react-native-elements';
 import {Keyboard} from 'react-native';
@@ -42,6 +42,7 @@ export default function FindPokemon({which, isError}) {
           <View style={styles.buttonOuterContainer}>
             <Pressable
               onPress={cancel}
+              testID="cancel"
               android_ripple={{color: '#AA336A'}}
               style={styles.buttonInnerContainer}>
               <Text style={styles.text}>Cancel Search</Text>

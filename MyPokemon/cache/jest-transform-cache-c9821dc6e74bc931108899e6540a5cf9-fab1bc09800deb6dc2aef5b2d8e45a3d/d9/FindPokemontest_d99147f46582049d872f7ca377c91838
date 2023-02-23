@@ -1,0 +1,44 @@
+04f677d37263310856f01440ae3e870d
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _FindPokemon = _interopRequireDefault(require("../UI/components/FindPokemon"));
+var _jsxRuntime = require("react/jsx-runtime");
+describe('Test search pokemon component', function () {
+  test('Component renders correctly with error prop false and no entered text', (0, _asyncToGenerator2.default)(function* () {
+    var error = false;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    expect(_reactNative.screen.getByText('Search For A Pokemon')).toBeTruthy();
+    expect(_reactNative.screen.getByPlaceholderText('Click here')).toBeTruthy();
+  }));
+  test('Component error message renders', (0, _asyncToGenerator2.default)(function* () {
+    var error = true;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    expect(_reactNative.screen.getByText('NO MATCHING POKEMON FOUND')).toBeTruthy();
+  }));
+  test('Entering search text works', function () {
+    var error = false;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    _reactNative.fireEvent.changeText(_reactNative.screen.getByPlaceholderText('Click here'), 'charmander');
+    expect(_reactNative.screen.getByText('Cancel Search')).toBeTruthy();
+    _reactNative.fireEvent.press(_reactNative.screen.getByTestId('cancel'));
+    expect(_reactNative.screen.queryByText('Cancel Search')).toBeNull();
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJkZXNjcmliZSIsInRlc3QiLCJlcnJvciIsIndoaWNoTW9jayIsImplc3QiLCJmbiIsInRyZWUiLCJyZW5kZXIiLCJleHBlY3QiLCJzY3JlZW4iLCJnZXRCeVRleHQiLCJ0b0JlVHJ1dGh5IiwiZ2V0QnlQbGFjZWhvbGRlclRleHQiLCJmaXJlRXZlbnQiLCJjaGFuZ2VUZXh0IiwicHJlc3MiLCJnZXRCeVRlc3RJZCIsInF1ZXJ5QnlUZXh0IiwidG9CZU51bGwiXSwic291cmNlcyI6WyJGaW5kUG9rZW1vbi50ZXN0LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gIHJlbmRlcixcbiAgc2NyZWVuLFxuICBmaXJlRXZlbnQsXG4gIGFjdCxcbiAgd2FpdEZvcixcbn0gZnJvbSAnQHRlc3RpbmctbGlicmFyeS9yZWFjdC1uYXRpdmUnO1xuaW1wb3J0ICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBGaW5kUG9rZW1vbiBmcm9tICcuLi9VSS9jb21wb25lbnRzL0ZpbmRQb2tlbW9uJztcblxuZGVzY3JpYmUoJ1Rlc3Qgc2VhcmNoIHBva2Vtb24gY29tcG9uZW50JywgKCkgPT4ge1xuICB0ZXN0KCdDb21wb25lbnQgcmVuZGVycyBjb3JyZWN0bHkgd2l0aCBlcnJvciBwcm9wIGZhbHNlIGFuZCBubyBlbnRlcmVkIHRleHQnLCBhc3luYyAoKSA9PiB7XG4gICAgY29uc3QgZXJyb3IgPSBmYWxzZTtcbiAgICBjb25zdCB3aGljaE1vY2sgPSBqZXN0LmZuKCk7XG4gICAgY29uc3QgdHJlZSA9IHJlbmRlcig8RmluZFBva2Vtb24gd2hpY2g9e3doaWNoTW9ja30gaXNFcnJvcj17ZXJyb3J9IC8+KTtcbiAgICBleHBlY3Qoc2NyZWVuLmdldEJ5VGV4dCgnU2VhcmNoIEZvciBBIFBva2Vtb24nKSkudG9CZVRydXRoeSgpO1xuICAgIGV4cGVjdChzY3JlZW4uZ2V0QnlQbGFjZWhvbGRlclRleHQoJ0NsaWNrIGhlcmUnKSkudG9CZVRydXRoeSgpO1xuICB9KTtcblxuICB0ZXN0KCdDb21wb25lbnQgZXJyb3IgbWVzc2FnZSByZW5kZXJzJywgYXN5bmMgKCkgPT4ge1xuICAgIGNvbnN0IGVycm9yID0gdHJ1ZTtcbiAgICBjb25zdCB3aGljaE1vY2sgPSBqZXN0LmZuKCk7XG4gICAgY29uc3QgdHJlZSA9IHJlbmRlcig8RmluZFBva2Vtb24gd2hpY2g9e3doaWNoTW9ja30gaXNFcnJvcj17ZXJyb3J9IC8+KTtcbiAgICBleHBlY3Qoc2NyZWVuLmdldEJ5VGV4dCgnTk8gTUFUQ0hJTkcgUE9LRU1PTiBGT1VORCcpKS50b0JlVHJ1dGh5KCk7XG4gIH0pO1xuXG4gIHRlc3QoJ0VudGVyaW5nIHNlYXJjaCB0ZXh0IHdvcmtzJywgKCkgPT4ge1xuICAgIGNvbnN0IGVycm9yID0gZmFsc2U7XG4gICAgY29uc3Qgd2hpY2hNb2NrID0gamVzdC5mbigpO1xuICAgIGNvbnN0IHRyZWUgPSByZW5kZXIoPEZpbmRQb2tlbW9uIHdoaWNoPXt3aGljaE1vY2t9IGlzRXJyb3I9e2Vycm9yfSAvPik7XG4gICAgZmlyZUV2ZW50LmNoYW5nZVRleHQoXG4gICAgICBzY3JlZW4uZ2V0QnlQbGFjZWhvbGRlclRleHQoJ0NsaWNrIGhlcmUnKSxcbiAgICAgICdjaGFybWFuZGVyJyxcbiAgICApO1xuICAgIGV4cGVjdChzY3JlZW4uZ2V0QnlUZXh0KCdDYW5jZWwgU2VhcmNoJykpLnRvQmVUcnV0aHkoKTtcbiAgICBmaXJlRXZlbnQucHJlc3Moc2NyZWVuLmdldEJ5VGVzdElkKCdjYW5jZWwnKSk7XG4gICAgZXhwZWN0KHNjcmVlbi5xdWVyeUJ5VGV4dCgnQ2FuY2VsIFNlYXJjaCcpKS50b0JlTnVsbCgpO1xuICB9KTtcbn0pO1xuIl0sIm1hcHBpbmdzIjoiOzs7O0FBQUE7QUFPQTtBQUNBO0FBQ0E7QUFBdUQ7QUFFdkRBLFFBQVEsQ0FBQywrQkFBK0IsRUFBRSxZQUFNO0VBQzlDQyxJQUFJLENBQUMsdUVBQXVFLGtDQUFFLGFBQVk7SUFDeEYsSUFBTUMsS0FBSyxHQUFHLEtBQUs7SUFDbkIsSUFBTUMsU0FBUyxHQUFHQyxJQUFJLENBQUNDLEVBQUUsRUFBRTtJQUMzQixJQUFNQyxJQUFJLEdBQUcsSUFBQUMsbUJBQU0sRUFBQyxxQkFBQyxvQkFBVztNQUFDLEtBQUssRUFBRUosU0FBVTtNQUFDLE9BQU8sRUFBRUQ7SUFBTSxFQUFHLENBQUM7SUFDdEVNLE1BQU0sQ0FBQ0MsbUJBQU0sQ0FBQ0MsU0FBUyxDQUFDLHNCQUFzQixDQUFDLENBQUMsQ0FBQ0MsVUFBVSxFQUFFO0lBQzdESCxNQUFNLENBQUNDLG1CQUFNLENBQUNHLG9CQUFvQixDQUFDLFlBQVksQ0FBQyxDQUFDLENBQUNELFVBQVUsRUFBRTtFQUNoRSxDQUFDLEVBQUM7RUFFRlYsSUFBSSxDQUFDLGlDQUFpQyxrQ0FBRSxhQUFZO0lBQ2xELElBQU1DLEtBQUssR0FBRyxJQUFJO0lBQ2xCLElBQU1DLFNBQVMsR0FBR0MsSUFBSSxDQUFDQyxFQUFFLEVBQUU7SUFDM0IsSUFBTUMsSUFBSSxHQUFHLElBQUFDLG1CQUFNLEVBQUMscUJBQUMsb0JBQVc7TUFBQyxLQUFLLEVBQUVKLFNBQVU7TUFBQyxPQUFPLEVBQUVEO0lBQU0sRUFBRyxDQUFDO0lBQ3RFTSxNQUFNLENBQUNDLG1CQUFNLENBQUNDLFNBQVMsQ0FBQywyQkFBMkIsQ0FBQyxDQUFDLENBQUNDLFVBQVUsRUFBRTtFQUNwRSxDQUFDLEVBQUM7RUFFRlYsSUFBSSxDQUFDLDRCQUE0QixFQUFFLFlBQU07SUFDdkMsSUFBTUMsS0FBSyxHQUFHLEtBQUs7SUFDbkIsSUFBTUMsU0FBUyxHQUFHQyxJQUFJLENBQUNDLEVBQUUsRUFBRTtJQUMzQixJQUFNQyxJQUFJLEdBQUcsSUFBQUMsbUJBQU0sRUFBQyxxQkFBQyxvQkFBVztNQUFDLEtBQUssRUFBRUosU0FBVTtNQUFDLE9BQU8sRUFBRUQ7SUFBTSxFQUFHLENBQUM7SUFDdEVXLHNCQUFTLENBQUNDLFVBQVUsQ0FDbEJMLG1CQUFNLENBQUNHLG9CQUFvQixDQUFDLFlBQVksQ0FBQyxFQUN6QyxZQUFZLENBQ2I7SUFDREosTUFBTSxDQUFDQyxtQkFBTSxDQUFDQyxTQUFTLENBQUMsZUFBZSxDQUFDLENBQUMsQ0FBQ0MsVUFBVSxFQUFFO0lBQ3RERSxzQkFBUyxDQUFDRSxLQUFLLENBQUNOLG1CQUFNLENBQUNPLFdBQVcsQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUM3Q1IsTUFBTSxDQUFDQyxtQkFBTSxDQUFDUSxXQUFXLENBQUMsZUFBZSxDQUFDLENBQUMsQ0FBQ0MsUUFBUSxFQUFFO0VBQ3hELENBQUMsQ0FBQztBQUNKLENBQUMsQ0FBQyJ9

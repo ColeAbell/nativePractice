@@ -1,0 +1,22 @@
+bd7fa5fc35984ec4eb7b3fbc0c180b80
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+var _reactNative = require("@testing-library/react-native");
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _FindPokemon = _interopRequireDefault(require("../UI/components/FindPokemon"));
+var _jsxRuntime = require("react/jsx-runtime");
+describe('Test search pokemon component', function () {
+  test('Component renders correctly with error prop false', (0, _asyncToGenerator2.default)(function* () {
+    var error = false;
+    var whichMock = jest.fn();
+    var tree = (0, _reactNative.render)((0, _jsxRuntime.jsx)(_FindPokemon.default, {
+      which: whichMock,
+      isError: error
+    }));
+    expect(_reactNative.screen.getByText('Search For A Pokemon')).toBeTruthy();
+  }));
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJkZXNjcmliZSIsInRlc3QiLCJlcnJvciIsIndoaWNoTW9jayIsImplc3QiLCJmbiIsInRyZWUiLCJyZW5kZXIiLCJleHBlY3QiLCJzY3JlZW4iLCJnZXRCeVRleHQiLCJ0b0JlVHJ1dGh5Il0sInNvdXJjZXMiOlsiRmluZFBva2Vtb24udGVzdC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xuICByZW5kZXIsXG4gIHNjcmVlbixcbiAgZmlyZUV2ZW50LFxuICBhY3QsXG4gIHdhaXRGb3IsXG59IGZyb20gJ0B0ZXN0aW5nLWxpYnJhcnkvcmVhY3QtbmF0aXZlJztcbmltcG9ydCAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgRmluZFBva2Vtb24gZnJvbSAnLi4vVUkvY29tcG9uZW50cy9GaW5kUG9rZW1vbic7XG5cbmRlc2NyaWJlKCdUZXN0IHNlYXJjaCBwb2tlbW9uIGNvbXBvbmVudCcsICgpID0+IHtcbiAgdGVzdCgnQ29tcG9uZW50IHJlbmRlcnMgY29ycmVjdGx5IHdpdGggZXJyb3IgcHJvcCBmYWxzZScsIGFzeW5jICgpID0+IHtcbiAgICBjb25zdCBlcnJvciA9IGZhbHNlO1xuICAgIGNvbnN0IHdoaWNoTW9jayA9IGplc3QuZm4oKTtcbiAgICBjb25zdCB0cmVlID0gcmVuZGVyKDxGaW5kUG9rZW1vbiB3aGljaD17d2hpY2hNb2NrfSBpc0Vycm9yPXtlcnJvcn0gLz4pO1xuICAgIGV4cGVjdChzY3JlZW4uZ2V0QnlUZXh0KCdTZWFyY2ggRm9yIEEgUG9rZW1vbicpKS50b0JlVHJ1dGh5KCk7XG4gIH0pO1xufSk7XG4iXSwibWFwcGluZ3MiOiI7Ozs7QUFBQTtBQU9BO0FBQ0E7QUFDQTtBQUF1RDtBQUV2REEsUUFBUSxDQUFDLCtCQUErQixFQUFFLFlBQU07RUFDOUNDLElBQUksQ0FBQyxtREFBbUQsa0NBQUUsYUFBWTtJQUNwRSxJQUFNQyxLQUFLLEdBQUcsS0FBSztJQUNuQixJQUFNQyxTQUFTLEdBQUdDLElBQUksQ0FBQ0MsRUFBRSxFQUFFO0lBQzNCLElBQU1DLElBQUksR0FBRyxJQUFBQyxtQkFBTSxFQUFDLHFCQUFDLG9CQUFXO01BQUMsS0FBSyxFQUFFSixTQUFVO01BQUMsT0FBTyxFQUFFRDtJQUFNLEVBQUcsQ0FBQztJQUN0RU0sTUFBTSxDQUFDQyxtQkFBTSxDQUFDQyxTQUFTLENBQUMsc0JBQXNCLENBQUMsQ0FBQyxDQUFDQyxVQUFVLEVBQUU7RUFDL0QsQ0FBQyxFQUFDO0FBQ0osQ0FBQyxDQUFDIn0=
