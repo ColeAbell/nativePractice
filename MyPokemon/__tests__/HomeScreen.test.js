@@ -29,6 +29,6 @@ describe('Testing Home Component / no navigation', () => {
       <HomeScreen navigation={{setOptions: optionsMock, navigate: navMock}} />,
     );
     expect(screen.getByTestId('loading')).toBeTruthy();
-    console.log('test');
+    console.log('tes');
   });
 });
