@@ -25,7 +25,7 @@ describe('Test search pokemon component', () => {
     expect(screen.getByText('NO MATCHING POKEMON FOUND')).toBeTruthy();
   });
 
-  test('Entering search text works and cancel search works, confirm prop funcntion is fired on change', () => {
+  test('Entering search text works and cancel search works, confirm prop function is fired on change', () => {
     const error = false;
     const whichMock = jest.fn();
     const tree = render(<FindPokemon which={whichMock} isError={error} />);

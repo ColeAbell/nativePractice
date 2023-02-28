@@ -30,7 +30,7 @@ function AuthStack() {
   );
 }
 
-function AuthenticatedStack() {
+export function AuthenticatedStack() {
   const dispatch = useDispatch();
 
   async function logout() {

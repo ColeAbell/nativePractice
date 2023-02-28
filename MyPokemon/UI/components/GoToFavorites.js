@@ -8,6 +8,7 @@ export default function GoToFavorites({go}) {
       <Pressable
         onPress={go}
         style={styles.buttonInnerContainer}
+        testID="go"
         android_ripple={{color: '#AA336A'}}>
         <Text style={styles.name}>Favorites</Text>
       </Pressable>

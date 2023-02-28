@@ -75,7 +75,7 @@ export default function HomeScreen({navigation}) {
             style={styles.list}
           />
         ) : (
-          <ActivityIndicator size="large" />
+          <ActivityIndicator testID="loading" size="large" />
         )}
       </View>
     </SafeAreaView>
