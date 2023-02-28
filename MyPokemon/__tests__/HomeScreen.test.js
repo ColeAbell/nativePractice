@@ -30,5 +30,6 @@ describe('Testing Home Component / no navigation', () => {
     );
     expect(screen.getByTestId('loading')).toBeTruthy();
     console.log('tes');
+    console.log('again');
   });
 });
