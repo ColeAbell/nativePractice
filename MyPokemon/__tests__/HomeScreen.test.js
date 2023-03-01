@@ -43,7 +43,7 @@ describe('Testing Home Component / no navigation', () => {
     const tree = render(
       <HomeScreen navigation={{setOptions: optionsMock, navigate: navMock}} />,
     );
-    //expect(creen.getByTestId('loading')).toBeTruthy();
+    //expect(creen.etByTestId('loading')).toBeTruthy();
     expect(screen.getByText('Please work')).toBeTruthy();
     await waitFor(() => {
       expect(screen.getByTestId('b')).toBeTruthy();
