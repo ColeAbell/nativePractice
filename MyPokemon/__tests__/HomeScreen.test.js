@@ -1,7 +1,17 @@
 import * as React from 'react';
-import {render, screen, fireEvent} from '@testing-library/react-native';
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  act,
+} from '@testing-library/react-native';
 import HomeScreen from '../UI/components/screens/HomeScreen';
 import * as pokecalls from '../services/pokemonRequests';
+import ditto from './ditto.json';
+import {Text} from 'react-native';
+import * as poke from '../UI/components/Pokemon';
+import Pokemon from '../UI/components/Pokemon';
 
 const pokeresult = [
   {
@@ -21,16 +31,23 @@ const pokeresult = [
 describe('Testing Home Component / no navigation', () => {
   test('Confirm Home renders properly', async () => {
     pokecalls.getAllPokemon = jest.fn().mockImplementation(url => {
-      return '';
+      return pokeresult;
+    });
+    pokecalls.getOnePokemon = jest.fn().mockImplementation(url => {
+      console.log(url);
+      return ditto;
     });
     const optionsMock = jest.fn();
     const navMock = jest.fn();
+    let comp;
     const tree = render(
       <HomeScreen navigation={{setOptions: optionsMock, navigate: navMock}} />,
     );
-    expect(screen.getByTestId('loading')).toBeTruthy();
-    console.log('tes');
-    console.log('again');
-    console.log('again again');
+    //expect(screen.getByTestId('loading')).toBeTruthy();
+    expect(screen.getByText('Please work')).toBeTruthy();
+    await waitFor(() => {
+      expect(screen.getByTestId('b')).toBeTruthy();
+    });
+    await waitFor(() => expect(screen.getByText('ditto')).toBeTruthy());
   });
 });

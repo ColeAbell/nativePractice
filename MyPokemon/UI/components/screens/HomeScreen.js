@@ -60,6 +60,7 @@ export default function HomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.list}>
       <Text>Please work</Text>
+      <Pokemon details={{name: 'ditto', url: 'ditto'}} press={toDetails} />
       <View style={styles.container}>
         <FindPokemon which={which} isError={error} />
         {pokemon ? (
@@ -73,6 +74,7 @@ export default function HomeScreen({navigation}) {
             numColumns={2}
             columnWrapperStyle={{justifyContent: 'space-between'}}
             style={styles.list}
+            initialNumToRender={3}
           />
         ) : (
           <ActivityIndicator testID="loading" size="large" />

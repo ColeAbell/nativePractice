@@ -1,0 +1,23 @@
+721f1e62b3d6895af8861c64c8344ef4
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = PokemonMock;
+var _reactNative = require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _jsxRuntime = require("react/jsx-runtime");
+function PokemonMock(_ref) {
+  var details = _ref.details,
+    press = _ref.press;
+  return (0, _jsxRuntime.jsx)(_reactNative.Pressable, {
+    testID: "child",
+    onPress: press,
+    children: (0, _jsxRuntime.jsx)(_reactNative.Text, {
+      children: details.name
+    })
+  });
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJQb2tlbW9uTW9jayIsImRldGFpbHMiLCJwcmVzcyIsIm5hbWUiXSwic291cmNlcyI6WyJQb2tlbW9uTW9jay5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1ByZXNzYWJsZSwgVGV4dH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBva2Vtb25Nb2NrKHtkZXRhaWxzLCBwcmVzc30pIHtcbiAgcmV0dXJuIChcbiAgICA8UHJlc3NhYmxlIHRlc3RJRD1cImNoaWxkXCIgb25QcmVzcz17cHJlc3N9PlxuICAgICAgPFRleHQ+e2RldGFpbHMubmFtZX08L1RleHQ+XG4gICAgPC9QcmVzc2FibGU+XG4gICk7XG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTtBQUNBO0FBQTBCO0FBRVgsU0FBU0EsV0FBVyxPQUFtQjtFQUFBLElBQWpCQyxPQUFPLFFBQVBBLE9BQU87SUFBRUMsS0FBSyxRQUFMQSxLQUFLO0VBQ2pELE9BQ0UscUJBQUMsc0JBQVM7SUFBQyxNQUFNLEVBQUMsT0FBTztJQUFDLE9BQU8sRUFBRUEsS0FBTTtJQUFBLFVBQ3ZDLHFCQUFDLGlCQUFJO01BQUEsVUFBRUQsT0FBTyxDQUFDRTtJQUFJO0VBQVEsRUFDakI7QUFFaEIifQ==
